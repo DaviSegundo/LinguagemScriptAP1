@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <br>
+    <h2>{% block title %} Servidor para entrar um número e retornar o resultado de uma expressão. {% endblock %}</h2>
+    <br>
+    <h4>Linguagem: <b>Python</b></h4>
+    <h4>Framework: <b>Flask</b></h4>
+    <br>
+    <span><b>Expressão escolhida:</b></span>
+    <br>
+    <span><b>10x+8</b></span>
+    <br>
+    <br>
+    <form method="post">
+        <div class="form-group">
+            <label for="number">Número:</label>
+            <input type="number" name="number"
+                   placeholder="Entre um número" class="form-control"
+                   value="{{ request.form['number'] }}"></input>
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary">Enviar número</button>
+        </div>
+    </form>
+    <br>
+    <label for="number">Resultado da expressão:</label>
+    <br>
+    <span><b>{{ numero }}</b></span>
+{% endblock %}
